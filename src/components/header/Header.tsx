@@ -1,6 +1,5 @@
-import React from "react";
 import Navbar from "../navbar/Navbar";
-const Header = (props) => {
+const Header = () => {
   return (
     <header className="header">
       <Navbar />

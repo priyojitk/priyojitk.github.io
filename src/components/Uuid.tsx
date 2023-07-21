@@ -1,14 +1,13 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const Home = () => {
   const [output, setOutput] = useState("");
 
-  const handleChange = (e) => {
+  const handleChange = (e: { target: { value: string } }) => {
     const input = e.target.value;
-    let output = input.replaceAll('-', '').toUpperCase();
-    setOutput(output)
-  }
-
+    const output = input.replaceAll("-", "").toUpperCase();
+    setOutput(output);
+  };
 
   return (
     <div className="container my-4">
@@ -18,7 +17,7 @@ const Home = () => {
       <h5 className="mt-4">Output: </h5>
       <p>{output}</p>
     </div>
-  )
+  );
 };
 
 export default Home;
