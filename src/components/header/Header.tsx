@@ -33,8 +33,8 @@ export default function Header() {
         </Link>
 
         <ul className="nav nav-pills">
-          {links.map((menu) => (
-            <li className="nav-item">
+          {links.map((menu, i) => (
+            <li className="nav-item" key={i}>
               <Link to={menu.ref} className="nav-link">
                 {menu.title}
               </Link>

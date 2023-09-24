@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { CURRENT_YEAR } from "../../config";
+import Social from "../social/social";
 
 export default function footer() {
   const footers = [
@@ -19,13 +20,21 @@ export default function footer() {
     },
     {
       title: "About",
-      links: [{ name: "About", ref: "/about" }],
+      links: [
+        {
+          name: "About me",
+          ref: "//www.linkedin.com/in/priyojit-kharibam-16b138107/",
+        },
+      ],
     },
   ];
   return (
     <footer className="pt-4 border-top bg-light">
       <div className="container">
         <div className="row">
+          <div className="col-6 col-md">
+            <Social />
+          </div>
           {footers.map((footer, index) => (
             <div className="col-6 col-md" key={index}>
               <h5>{footer.title}</h5>
@@ -42,6 +51,7 @@ export default function footer() {
           ))}
         </div>
       </div>
+
       <div className="container-fluid bg-dark">
         <div className="text-white text-center pt-2 pb-2">
           &copy; {CURRENT_YEAR}{" "}
