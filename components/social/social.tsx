@@ -1,5 +1,6 @@
 "use client";
 import { Facebook, Github, Linkedin, Twitter } from "lucide-react";
+import Link from "next/link";
 
 function social() {
   const socials = [
@@ -30,13 +31,13 @@ function social() {
   ];
   return (
     <div className="flex flex-col gap-2">
-      <h3 className="text-2xl">Let's connect</h3>
+      <h3 className="text-2xl">Let@apos;s connect</h3>
       <ul className="flex flex-row gap-2">
         {socials.map((social, i) => (
           <li key={i}>
-            <a href={social.link} target="_blank">
+            <Link href={social.link} target="_blank">
               <social.icon />
-            </a>
+            </Link>
           </li>
         ))}
       </ul>

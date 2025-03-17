@@ -16,8 +16,11 @@ const Home = () => {
   const onChangeHandler = (e: { target: { value: string } }) => {
     const input = e.target.value;
 
-    setValid(uuidValidate(input));
-    uuidValidate(input) && setVersion(uuidVersion(input));
+    const isValid = uuidValidate(input);
+    setValid(isValid);
+    if (isValid) {
+      setVersion(uuidVersion(input));
+    }
     setUuid(addHyphenIfNotPresent(input));
     setHyphenRemoved(removeHyphen(input));
     setLowercase(toLowerCase(input));
